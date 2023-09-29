@@ -8,10 +8,7 @@ export default function Favorites() {
   const hasFavorites = favorites.length > 0;  
     
   view.innerHTML = `<div>
-    ${hasFavorites ? favorites.map(story => Story({
-        ...story,
-        isFavorite: checkFavorite(favorites, story)
-    })).join('') : "Add some favorites!"}
+    ${hasFavorites ? favorites.map(story => Story({ ...story, isFavorite: checkFavorite(favorites, story) })).join('') : "Add some favorites!"}
   </div>`  
   
    document.querySelectorAll('.favorite').forEach(favoriteButton => {
